@@ -13,7 +13,13 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/categoryAge.html',
         controller: 'CategoryAgeCtrl',
         controllerAs: 'categoryAge'
-      }).otherwise({redirectTo: 'index'});
+      })
+	  .when('/questionWhenTax', {
+        templateUrl: 'partials/questionWhenTax.html',
+        controller: 'QuestionWhenTaxCtrl',
+        controllerAs: 'questionWhenTax'
+      })
+	  .otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);
 }])
