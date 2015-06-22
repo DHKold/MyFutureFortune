@@ -1,13 +1,13 @@
 
-var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('MyFutureFortuneApp', ['ngRoute', 'ngAnimate']);
 
 app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/Book', {
-        templateUrl: 'partials/book.html',
-        controller: 'BookCtrl',
-        controllerAs: 'book'
+        templateUrl: 'partials/book.html'
+//        controller: 'BookCtrl',
+//        controllerAs: 'book'
       })
       .when('/Book/:bookId/ch/:chapterId', {
         templateUrl: 'chapter.html',
@@ -15,5 +15,5 @@ app.config(['$routeProvider', '$locationProvider',
         controllerAs: 'chapter'
       });
 
-    $locationProvider.html5Mode(true);
+//    $locationProvider.html5Mode(true);
 }])
