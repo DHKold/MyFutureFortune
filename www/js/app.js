@@ -9,10 +9,10 @@ app.config(['$routeProvider', '$locationProvider',
 //        controller: 'IndexCtrl',
 //        controllerAs: 'index'
       })
-      .when('/Book/:bookId/ch/:chapterId', {
-        templateUrl: 'chapter.html',
-        controller: 'ChapterCtrl',
-        controllerAs: 'chapter'
+      .when('/categoryAge', {
+        templateUrl: 'partials/categoryAge.html',
+        controller: 'CategoryAgeCtrl',
+        controllerAs: 'categoryAge'
       }).otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);
