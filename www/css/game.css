@@ -1,6 +1,7 @@
 /* Board */
 	#game-board{
 		position:			relative;
+		padding:				10px;
 	}
 
 	.plateau{
@@ -86,11 +87,12 @@
 /* Dice */
 	.diceroll{
 		border:				1px #777777 solid;
-		margin:				5px 0;
+		margin:				10px;
 		position:			relative;
 		text-align:			center;
 		height:				70px;
 		overflow:			hidden;
+		background:			white;
 	}
 	
 	.dicewait{
