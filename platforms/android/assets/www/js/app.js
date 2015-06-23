@@ -1,13 +1,12 @@
-
 var app = angular.module('MyFutureFortuneApp', ['ngRoute', 'ngAnimate']);
 
 app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/index', {
-        templateUrl: 'partials/index.html'
-//        controller: 'IndexCtrl',
-//        controllerAs: 'index'
+        templateUrl: 'partials/index.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'index'
       })
       .when('/categoryAge', {
         templateUrl: 'partials/categoryAge.html',
@@ -53,7 +52,27 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/plateau.html',
         controller: 'PlateauCtrl'
       })
-	  .otherwise({redirectTo: 'questionWhenTax'});
-
+	  .when('/aFaireImpot', {
+        templateUrl: 'partials/aFaireImpot.html',
+        controller: 'AFaireImpotCtrl'
+      })
+	  .when('/immo', {
+        templateUrl: 'partials/immo.html',
+        controller: 'ImmoCtrl'
+      })
+	  .when('/splash', {
+        templateUrl: 'partials/splash.html',
+        controller: 'SplashCtrl'
+      })
+	  .otherwise({redirectTo: 'index'});
 //    $locationProvider.html5Mode(true);
 }])
+
+/*if (document.location.protocol == "file:") {
+	document.addEventListener("deviceready", function() {
+		navigator.splashscreen.show();
+		setTimeout(function() {
+			navigator.splashscreen.hide();
+		}, 2000);
+	}, false);
+}*/

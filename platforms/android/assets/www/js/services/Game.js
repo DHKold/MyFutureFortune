@@ -30,16 +30,18 @@ app.service('GameSvc', function(){
 		},
 		
 		// Put the piece on a tile
-		putPieceOnTile : function(tileId, animate){
+		putPieceOnTile : function(tileId, animate, follow){
 			// Get the tile
-			var tile = $('#tile'+tileId);
 			var piece = $('#piece');
-			if (!tile || !piece) console.error(tile, piece);
 			
 			// Compute position
-			var position = tile.position();
-			var left = position.left + 10;
-			var top = position.top + 10;
+			function getTilePosition(tileId){
+				var tile = $('#tile'+tileId);
+				var position = tile.position();
+				var left = position.left + tile.width()/2 - 10;
+				var top = position.top + tile.height()/2 - 10;
+				return { left: left+'px', top: top+'px' };
+			}
 			
 			// Handler
 			var def = new $.Deferred();
@@ -48,12 +50,19 @@ app.service('GameSvc', function(){
 			}
 			
 			// Move the pawn
-			var props = { left: left+'px', top: top+'px' };
 			if (animate){
+				if (follow){
+					for (var i = this.progress+1; i<tileId; ++i){
+						var props = getTilePosition(i);
+						piece.animate(props);
+					}
+				}
+				var props = getTilePosition(tileId);
 				piece.animate(props, { complete : hMoveDone });
 			} else {
+				var props = getTilePosition(tileId);
 				piece.css(props);
-				hMoveDone();
+				window.setTimeout(hMoveDone, 1);
 			}
 			
 			this.progress = tileId;
@@ -95,7 +104,7 @@ app.service('GameSvc', function(){
 			var newProg = Math.min(42, this.progress + diceValue);
 			
 			// Move the pawn
-			return this.putPieceOnTile(newProg, true);
+			return this.putPieceOnTile(newProg, true, true);
 		},
 		
 		// Treat the tile action

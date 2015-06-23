@@ -1,4 +1,4 @@
-Tile = function(id, options){
+﻿Tile = function(id, options){
 	// Init
 	this.id = id;
 	
@@ -9,7 +9,7 @@ Tile = function(id, options){
 	return this;
 };
 
-app.controller('PlateauCtrl', function($scope, GameSvc){
+app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location, ScenarioSvc){
 	// Dummy
 	function resolved(){
 		var def = new $.Deferred();
@@ -17,13 +17,38 @@ app.controller('PlateauCtrl', function($scope, GameSvc){
 		return def.promise();
 	}
 	
+	function chainToScreenAction(screen){
+		return function(){
+			$rootScope.$apply(function() {
+				$location.path('/'+screen);
+			});
+		};
+	}
+	
+	// Scenario
+	function scenarioAction(){
+		var screen = ScenarioSvc.nextAction();
+		if (screen){
+			$rootScope.$apply(function() {
+			console.log(screen);
+				$location.path('/'+screen);
+			});
+		}
+		return resolved();
+	}
+	
+	// Initialize Panel
+	$scope.initPanel(null, null);
+	
 	// Init tiles
 	if (!GameSvc.hasBeenLoaded){
-		GameSvc.setTile(2, { action: function(){ alert('2'); return resolved(); } });
-		GameSvc.setTile(3, { action: function(){ alert('3'); return resolved(); } });
-		GameSvc.setTile(4, { action: function(){ alert('4'); return resolved(); } });
-		GameSvc.setTile(5, { action: function(){ alert('5'); return resolved(); } });
-		GameSvc.setTile(6, { action: function(){ alert('6'); return resolved(); } });
+		ScenarioSvc.init();
+	
+		for (var i = 2; i<=42; ++i){
+			GameSvc.setTile(i, { action: scenarioAction });
+		}
+
+		GameSvc.setTile(42, { action: function(){ alert('Bravo, vous avez gagné!'); return resolved(); } });
 		
 		GameSvc.start();
 		

@@ -4,6 +4,7 @@
 		<div class="highlight">
 		Tu veux acheter ton appart avec un crédit? Bravo!
 		</div>
+		<img src="img/appart.png" class="img-responsive" />
 		<div class="bs-callout bs-callout-warning">
 			As-tu déjà calculé ce que tu peux raisonnablement rembourser chaque mois ?
 				<div class="row">
@@ -61,11 +62,29 @@ Fais le calcul ci dessous:
 	</div>
 	</div>
 	<div ng-show="finalResult">
-		<div class="highlight">
-		Voici ta capacité d'épargne:
+		<div ng-show="first">
+			<div class="highlight">
+			Voici ta capacité d'épargne:
+			</div>
+			<div class="bs-callout bs-callout-warning">
+				800€/mois
+			</div>
+			<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 		</div>
-		<div class="bs-callout bs-callout-warning">
-			1500€/mois
+		<div ng-show="!first">
+			<div class="highlight">
+			Voici le montant que tu peux emprunter selon la durée pour taux de 2%
+			</div>
+			<div class="highlight red">
+Il tient compte des frais de Notaire (env. 7% dans l’ancien)
+			</div>
+			<div class="bs-callout bs-callout-warning">
+				<ul>
+				<li>Sur 15 ans (taux 2,05%): 118375€</li>
+				<li>Sur 20 ans (taux 2,25%): 146036€</li>
+				<li>Sur 25 ans (taux 2,58%): 165749€</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

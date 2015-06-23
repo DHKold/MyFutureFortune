@@ -71,9 +71,19 @@ max-width: auto;
 }
 
 .red {
-	background-color:#FF4D4D
+	background-color:#FF4D4D;
 }
 
+.green {
+	background-color:#00CC00;
+}
+
+.redText {
+	color: #FF4D4D;
+}
+.greenText{
+	color:#00CC00;
+}
 .orange {
 	background-color: #FFA319;
 }

@@ -1,71 +1,28 @@
 <div class="container">
-	<div ng-show="!finalResult">
-	<div class="question" ng-show="!answered">
-		<div class="highlight">
-		Tu veux acheter ton appart avec un crédit? Bravo!
+	<div class="highlight">
+	My Future Fortune
+	</div>
+	<div class="highlight">
+	Actions
+	</div>
+	<img src="img/plateau.png" class="img-responsive" />
+	<div class="bs-callout bs-callout-warning">
+		<div class="row">
+			<div class="col-md-7">
+			Jeter le dé
+			</div>
+			<div class="col-md-5">
+			<img src="img/shake.png" class="img-responsive" style="max-width: 30px" />
+			</div>
 		</div>
-		<div class="bs-callout bs-callout-warning">
-			As-tu déjà calculé ce que tu peux raisonnablement rembourser chaque mois ?
-				<div class="row">
-					<button type="button" class="btn btn-default" ng-click="answer(true)">Oui</button>
-					<button type="button" class="btn btn-default" ng-click="answer(false)">Non</button>
-				</div>
+		<div class="row">
+			<div class="col-md-7">
+			Mettre en favori
+			</div>
+			<div class="col-md-5">
+				<img src="img/favoriteOn.png" style="max-width: 30px" />
+			</div>
 		</div>
 	</div>
-	<div class="answerKO" ng-show="answered && !ok">
-		<div class="highlight">
-Tu as répondu non.
-Fais le calcul ci dessous:
-		</div>
-		<div class="bs-callout bs-callout-warning">
-			<form class="navbar-form navbar-left" role="search">
-			  <div class="form-group">
-				<label for="income">Salaire net/an</label>
-				<input type="number" name="income" class="form-control">
-			  </div>
-			  <div class="form-group">
-				<label for="credit">Salaire net/an</label>
-				<input type="number" name="credit" class="form-control">
-			  </div>
-			  <div class="form-group">
-				<label for="food">Nourriture</label>
-				<input type="number" name="food" class="form-control">
-			  </div>
-			  <div class="form-group">
-				<label for="insurance">Assurance</label>
-				<input type="number" name="insurance" class="form-control">
-			  </div>
-			  <div class="form-group">
-				<label for="insurance">Transport</label>
-				<input type="number" name="transport" class="form-control">
-			  </div>
-			  <div class="form-group">
-			  	<label for="insurance">Loisirs</label>
-				<input type="number" name="leisure" class="form-control">
-			  </div>
-			  <button type="submit" class="btn btn-default" ng-click="compute()">Calculer</button>
-			</form>
-		</div>
-	</div>
-	<div class="answerOK" ng-show="answered && ok">
-		<div class="highlight">
-			Bien joué!
-		</div>
-		<div class="highlight">
-			Petit cadeau d'une citation
-		</div>
-		<div class="bs-callout bs-callout-info">
-			"Vous n'avez pas raison parce que d'autres sont d'accord avec vous. Vous avez raison parce que votre raisonnement est juste".<br />
-			Warren Buffet.
-		</div>
-	</div>
-	</div>
-	<div ng-show="finalResult">
-		<div class="highlight">
-		Voici ta capacité d'épargne:
-		</div>
-		<div class="bs-callout bs-callout-warning">
-			1500€/mois
-		</div>
-	</div>
+	<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 </div>

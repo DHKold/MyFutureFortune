@@ -1,4 +1,3 @@
-
 var app = angular.module('MyFutureFortuneApp', ['ngRoute', 'ngAnimate']);
 
 app.config(['$routeProvider', '$locationProvider',
@@ -61,7 +60,19 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/immo.html',
         controller: 'ImmoCtrl'
       })
+	  .when('/splash', {
+        templateUrl: 'partials/splash.html',
+        controller: 'SplashCtrl'
+      })
 	  .otherwise({redirectTo: 'index'});
-
 //    $locationProvider.html5Mode(true);
 }])
+
+/*if (document.location.protocol == "file:") {
+	document.addEventListener("deviceready", function() {
+		navigator.splashscreen.show();
+		setTimeout(function() {
+			navigator.splashscreen.hide();
+		}, 2000);
+	}, false);
+}*/

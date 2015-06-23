@@ -25,7 +25,7 @@ Fais le calcul ci dessous:
 				<input type="number" name="income" class="form-control">
 			  </div>
 			  <div class="form-group">
-				<label for="credit">Salaire net/an</label>
+				<label for="credit">Crédit</label>
 				<input type="number" name="credit" class="form-control">
 			  </div>
 			  <div class="form-group">
@@ -40,10 +40,10 @@ Fais le calcul ci dessous:
 				<label for="insurance">Transport</label>
 				<input type="number" name="transport" class="form-control">
 			  </div>
-			  <div class="form-group">
+<!--			  <div class="form-group">
 			  	<label for="insurance">Loisirs</label>
 				<input type="number" name="leisure" class="form-control">
-			  </div>
+			  </div>-->
 			  <button type="submit" class="btn btn-default" ng-click="compute()">Calculer</button>
 			</form>
 		</div>
@@ -67,22 +67,22 @@ Fais le calcul ci dessous:
 			Voici ta capacité d'épargne:
 			</div>
 			<div class="bs-callout bs-callout-warning">
-				1500€/mois
+				800€/mois
 			</div>
 			<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 		</div>
 		<div ng-show="!first">
 			<div class="highlight">
-			Voici le montant que tu peux emprunter selon la durée
+			Voici le montant que tu peux emprunter selon la durée pour taux de 2%
 			</div>
 			<div class="highlight red">
 Il tient compte des frais de Notaire (env. 7% dans l’ancien)
 			</div>
 			<div class="bs-callout bs-callout-warning">
 				<ul>
-				<li>Sur 15 ans: 130000€</li>
-				<li>Sur 20 ans: 140000€</li>
-				<li>Sur 25 ans: 150000€</li>
+				<li>Sur 15 ans (taux 2,05%): 118375€</li>
+				<li>Sur 20 ans (taux 2,25%): 146036€</li>
+				<li>Sur 25 ans (taux 2,58%): 165749€</li>
 				</ul>
 			</div>
 		</div>

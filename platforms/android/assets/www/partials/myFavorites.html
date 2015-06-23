@@ -3,9 +3,11 @@
 	Ma liste des favoris
 	</div>
 
-	<ul>
-		<li ng-repeat="(path, title) in favorites">
-			<a href="" ng-click="go(path)">{{title}}</a>
-		</li>
-	</ul>
+	<div class="bs-callout bs-callout-warning">
+		<ul>
+			<li ng-repeat="(path, title) in favorites">
+				<a href="" ng-click="go(path)">{{title}}</a>
+			</li>
+		</ul>
+	</div>
 </div>

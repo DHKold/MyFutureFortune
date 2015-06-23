@@ -1,6 +1,6 @@
 "use strict";
 app.factory('FavoriteService', function () {
-	var favorites = {};
+	var favorites = {"immo": "Immobilier: quiz", "acheterAppart": "Achat immobilier"};
 	var service = {
 		toggleFavorite : function(title, path) {
 			if (favorites[path]) {
