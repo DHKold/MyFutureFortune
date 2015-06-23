@@ -1,39 +1,59 @@
 <div class="container">
-	<div class="highlight">
-	Le saviez-vous?
+	<div class="screen0" ng-show="screen0">
+		<div class="highlight">
+		Le saviez-vous?
+		</div>
+		<img src="img/immo.png" />
+		<div class="bs-callout bs-callout-warning">
+	L’apport personnel minimum indispensable s’élève à 10% du montant global du projet.
+	C’est 10% représentent : frais de négociation (agence immobilière), frais de notaire faire de garantie financière.
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 	</div>
-	<img src="img/immo.png" />
-	<div class="bs-callout bs-callout-warning">
-L’apport personnel minimum indispensable s’élève à 10% du montant global du projet.
-C’est 10% représentent : frais de négociation (agence immobilière), frais de notaire faire de garantie financière.
+
+	<div class="screen1" ng-show="screen1">
+		<div class="bs-callout bs-callout-warning">
+			Pour monter ton dossier de prêt immobilier, les justificatifs de domicile doivent-ils être de :
+			<div class="row">
+				<button type="submit" class="btn btn-default" ng-click="suivant()">Moins de 6 mois</button>
+				<button type="submit" class="btn btn-default" ng-click="suivant()">Moins de 3 mois</button>
+				<button type="submit" class="btn btn-default" ng-click="suivant()">	Moins de 1 mois</button>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 	</div>
-	<div class="bs-callout bs-callout-warning">
-Pour monter ton dossier de prêt immobilier, les justificatifs de domicile doivent-ils être de :
-Moins de 6 mois (Non)
-Moins de 3 mois (Oui)
-Moins de 1 mois (Oui)
+
+	<div class="screen2" ng-show="screen2">
+		<div class="bs-callout bs-callout-warning">
+	Parmi les justificatifs de domicile ci-dessous, quels sont ceux acceptés par la banque ?
+	Facture d’électricité, de gaz
+	Facture d’eau (Oui)
+	Facture France Telecom (Oui)
+	Mon abonnement à Canal + (Non)
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 	</div>
-	<div class="bs-callout bs-callout-warning">
-Parmi les justificatifs de domicile ci-dessous, quels sont ceux acceptés par la banque ?
-Facture d’électricité, de gaz
-Facture d’eau (Oui)
-Facture France Telecom (Oui)
-Mon abonnement à Canal + (Non)
+	
+	<div class="screen3" ng-show="screen3">
+		<div class="bs-callout bs-callout-warning">
+	Je suis logé(e) chez mes parents, quels justificatifs  de domicile dois-je fournir ?
+	Un mot de mes parents (Non)
+	La photo de famille (Non)
+	Une attestation d’hébergement (Oui)*
+	*Accompagnée de la pièce-d ‘identité de la personne qui héberge ainsi qu’un justificatif de domicile à son nom.
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 	</div>
-	<div class="bs-callout bs-callout-warning">
-Je suis logé(e) chez mes parents, quels justificatifs  de domicile dois-je fournir ?
-Un mot de mes parents (Non)
-La photo de famille (Non)
-Une attestation d’hébergement (Oui)*
-*Accompagnée de la pièce-d ‘identité de la personne qui héberge ainsi qu’un justificatif de domicile à son nom.
+	
+	<div class="screen4" ng-show="screen4">
+		<div class="bs-callout bs-callout-warning">
+	Je vais visiter un appartement :
+	J’y vais accompagne de :
+	 
+	1-Mes parents (si ce ta fait plaisir…..)
+	2- mes copains (Pour repérer la pendaison de crémaillère)
+	3- Un architecte (Oui, il pourra te conseiller sur l’état du bien)
+	4- Mon banquier (Pour quoi faire….. ?)
+		</div>
 	</div>
-	<div class="bs-callout bs-callout-warning">
-Je vais visiter un appartement :
-J’y vais accompagne de :
- 
-1-Mes parents (si ce ta fait plaisir…..)
-2- mes copains (Pour repérer la pendaison de crémaillère)
-3- Un architecte (Oui, il pourra te conseiller sur l’état du bien)
-4- Mon banquier (Pour quoi faire….. ?)
-</div>
 </div>

@@ -1,4 +1,8 @@
-app.controller('IndexCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+app.controller('IndexCtrl', ['$scope', '$rootScope', '$location', function ($scope, $rootScope, $location) {
 	$rootScope.showFavorite = false;
-	$scope.initPanel(null, "categoryAge");
+	$scope.initPanel(null, null);
+	
+	$scope.suivant = function() {
+		$location.path('categoryAge');
+	}
 }]);
