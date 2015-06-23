@@ -1,0 +1,124 @@
+/* Board */
+	#game-board{
+		position:			relative;
+	}
+
+	.plateau{
+		width:				100%;
+		background:			#777777;
+		table-layout:		fixed;
+		border-collapse:	collapse;
+	}
+
+	.plateau td{
+		border:				0;
+		padding:			0;
+		margin:				0;
+	}
+
+/* Board tiles */
+	.game-tile{
+		height:				60px;
+		width:				100%;
+		background-color:	#F0F0CC;
+		box-sizing:			border-box;
+		text-align:			center;
+		line-height:		60px;
+		font-size:			12px;
+		font-weight:		bold;
+		font-family:		Sans-Serif;
+		position:			relative;
+	}
+	
+	.game-tile-horiz{
+		border:				1px #777777 solid;
+		border-left:		0;
+		border-right:		0;
+	}
+
+	.game-tile-vert{
+		border:				1px #777777 solid;
+		border-top:			0;
+		border-bottom:		0;
+	}
+
+	.game-tile-l2b{
+		border:				1px #777777 solid;
+		border-left:		0;
+		border-bottom:		0;
+		border-top-right-radius: 50%;
+	}
+
+	.game-tile-l2t{
+		border:				1px #777777 solid;
+		border-left:		0;
+		border-top:			0;
+		border-bottom-right-radius: 50%;
+	}
+
+	.game-tile-r2b{
+		border:				1px #777777 solid;
+		border-right:		0;
+		border-bottom:		0;
+		border-top-left-radius: 50%;
+	}
+
+	.game-tile-r2t{
+		border:				1px #777777 solid;
+		border-right:		0;
+		border-top:			0;
+		border-bottom-left-radius: 50%;
+	}
+	
+/* Pieces */
+	.game-piece{
+		position:			absolute;
+		top:				20px;
+		left:				20px;
+		border-radius:		50%;
+		background:			#AA0000;
+		width:				20px;
+		height:				20px;
+		border:				5px #770000 solid;
+		z-index:			100;
+	}
+	
+/* Dice */
+	.diceroll{
+		border:				1px #777777 solid;
+		margin:				5px 0;
+		position:			relative;
+		text-align:			center;
+		height:				70px;
+		overflow:			hidden;
+	}
+	
+	.dicewait{
+		z-index:			100;
+		background-color:	rgba(180,180,180, 0.8);
+		background-image:	url('../img/shake.png');
+		background-repeat:	no-repeat;
+		background-position:10px center;
+		background-size:	60px;
+		text-align:			center;
+		line-height:		70px;
+		height:				70px;
+		width:				100%;
+		position:			absolute;
+		top:				0;
+		left:				0;
+		font-size:			18px;
+		font-weight:		bold;
+	}
+
+	.dice{
+		display:				inline-block;
+		background-image:		url('../img/dice6.png');
+		background-repeat:		no-repeat;
+		background-position:	80% 0;
+		background-size:		cover;
+		height:					60px;
+		width:					60px;
+		margin:					5px;
+	}
+	

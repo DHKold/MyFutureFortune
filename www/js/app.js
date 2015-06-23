@@ -49,6 +49,10 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'SalarieCtrl',
         controllerAs: 'salarie'
       })
+	  .when('/plateau', {
+        templateUrl: 'partials/plateau.html',
+        controller: 'PlateauCtrl'
+      })
 	  .otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);
