@@ -3,6 +3,10 @@ app.controller('CategoryAgeCtrl', ['$scope', '$rootScope', '$location', function
 	$scope.initPanel(null, null);
 
 	$scope.selectCategoryAge = function() {
-		$location.path('plateau');
+		$("#myModal").modal();
 	};
+	
+	$scope.suivant = function() {
+		$location.path('plateau');
+	}
 }]);

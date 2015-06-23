@@ -1,23 +1,50 @@
 <div class="categoryAge">
 	<div class="row">
 		<div class=".col-md-12">
-			<button class="btn btn-primary btn-block" type="submit" ng-click="selectCategoryAge()">Actif et moins de 30 ans?</button>
+			<button class="btn btn-primary btn-block" type="submit" ng-click="selectCategoryAge()">Actif et moins de 30 ans</button>
+		</div>
+		<div class=".col-md-12">
+			<button class="btn btn-success btn-block" type="submit" ng-click="selectCategoryAge()">Cadre actif 30 à 42 ans</button>
+		</div>
+		<div class=".col-md-12">
+			<button class="btn btn-danger btn-block" type="submit" ng-click="selectCategoryAge()">Cadre expérimenté 42 à 55 ans</button>
+		</div>
+		<div class=".col-md-12">
+			<button class="btn btn-default btn-block" type="submit" ng-click="selectCategoryAge()">Plus de 55 ans</button>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Mode joueur</h4>
+		  </div>
+		  <div class="modal-body">
+			<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="suivant()">Solo</button>
+			<button type="button" class="btn btn-primary" ng-click="">Multijoueur</button>
+		  </div>
+		  <div class="modal-footer">
+		  </div>
+		</div>
+	  </div>
+	</div>
+<!--	<div class="row">
+		<div class=".col-md-12">
+			<button class="btn btn-success btn-block" type="submit" ng-click="selectCategoryAge()">Cadre actif 30 à 35 ans</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class=".col-md-12">
-			<button class="btn btn-success btn-block" type="submit" ng-click="selectCategoryAge()">Cadre actif<br />30 à 35 ans?</button>
+			<button class="btn btn-danger btn-block" type="submit" ng-click="selectCategoryAge()">Cadre expérimenté plus de 35 ans</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class=".col-md-12">
-			<button class="btn btn-danger btn-block" type="submit" ng-click="selectCategoryAge()">Cadre expérimenté<br />plus de 35 ans?</button>
+			<button class="btn btn-default btn-block" type="submit" ng-click="selectCategoryAge()">Dirigeant</button>
 		</div>
-	</div>
-	<div class="row">
-		<div class=".col-md-12">
-			<button class="btn btn-default btn-block" type="submit" ng-click="selectCategoryAge()">Dirigeant?</button>
-		</div>
-	</div>
+	</div>-->
 	</div>
 </div>
