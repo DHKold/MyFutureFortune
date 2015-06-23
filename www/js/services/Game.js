@@ -46,7 +46,9 @@ app.service('GameSvc', function(){
 			// Handler
 			var def = new $.Deferred();
 			function hMoveDone(){
-				def.resolve(tileId);
+				window.setTimeout(function(){
+					def.resolve(tileId);
+				}, 1500);
 			}
 			
 			// Move the pawn
