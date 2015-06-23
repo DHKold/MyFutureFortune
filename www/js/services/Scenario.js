@@ -23,9 +23,8 @@ app.service('ScenarioSvc', function(){
 			if (action.handler) action.handler(this.currentStep);
 			
 			// Redirect to a screen
-			console.warn('ACTION ',this.currentStep, 'HANDLER '+(action.handler?'Y':'N'), 'SCREEN ',action.screen);
 			++this.currentStep;
-			return action.screen;
+			return action;
 		}
 	};
 });
