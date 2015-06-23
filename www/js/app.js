@@ -34,6 +34,21 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'MyFavoritesCtrl',
         controllerAs: 'myFavorites'
       })
+	  .when('/aimePeche', {
+        templateUrl: 'partials/aimePeche.html',
+        controller: 'AimePecheCtrl',
+        controllerAs: 'aimePeche'
+      })
+	  .when('/cinema', {
+        templateUrl: 'partials/cinema.html',
+        controller: 'CinemaCtrl',
+        controllerAs: 'cinema'
+      })
+	  .when('/salarie', {
+        templateUrl: 'partials/salarie.html',
+        controller: 'SalarieCtrl',
+        controllerAs: 'salarie'
+      })
 	  .otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);
