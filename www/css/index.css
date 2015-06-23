@@ -1,7 +1,30 @@
-
 .categoryAge  .row {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.bs-callout-warning {
+  border-left-color: #aa6708;
+}
+.bs-callout-info {
+  border-left-color: #1b809e;
+}
+.bs-callout-danger {
+  border-left-color: #ce4844;
+}
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
 }

@@ -1,10 +1,40 @@
 <div class="container">
-	<div class="alert alert-danger">
-	Pas de chance, tu vas (encore) payer des impôts!
+	<div class="question" ng-show="!answered">
+		<div class="highlight">
+		Pas de chance, tu vas (encore) payer des impôts!
+		</div>
+		<div class="bs-callout bs-callout-warning">
+			Tu sais quand?
+			<div class="row">
+				<button type="button" class="btn btn-default" ng-click="answer(true)">Oui</button>
+				<button type="button" class="btn btn-default" ng-click="answer(false)">Non</button>
+			</div>
+		</div>
 	</div>
-	<div class="row">
-	<button class="btn btn-primary btn-block" type="submit">
-	Tu sais quand?
-	</button>
+	<div class="answerOK" ng-show="answered && ok">
+		<div class="highlight">
+			Tu savais quand...
+		</div>
+		<div class="bs-callout bs-callout-warning">
+			Déclaration avril-mai selon ta zone (juin sur internet)
+		</div>
+		<div class="bs-callout bs-callout-warning">
+			Sur tes revenus de l'an passé
+		</div>
+		<div class="bs-callout bs-callout-warning">
+			Paiement trimestriel (le 1er juin en octobre) ou mensualités
+		</div>
+	</div>
+	<div class="answerKO" ng-show="answered && !ok">
+		<div class="highlight">
+			Tu ne savais pas quand...
+		</div>
+		<div class="highlight">
+			Petit cadeau d'une citation
+		</div>
+		<div class="bs-callout bs-callout-info">
+			"Vous n'avez pas raison parce que d'autres sont d'accord avec vous. Vous avez raison parce que votre raisonnement est juste".<br />
+			Warren Buffet.
+		</div>
 	</div>
 </div>
