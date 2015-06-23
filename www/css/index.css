@@ -48,8 +48,9 @@
 	word-wrap: break-word;
 }
 .favorite {
-float:left
+	float:left;
 }
+
 .favorite img {
 max-height:32px;
 max-width: auto;
