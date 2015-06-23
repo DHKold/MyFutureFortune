@@ -19,6 +19,11 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'QuestionWhenTaxCtrl',
         controllerAs: 'questionWhenTax'
       })
+	  .when('/infoEquilibrer', {
+        templateUrl: 'partials/equilibrer.html',
+        controller: 'EquilibrerCtrl',
+        controllerAs: 'equilibrer'
+      })
 	  .otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);
