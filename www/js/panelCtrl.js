@@ -11,8 +11,6 @@ app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$locati
 		var favorites = FavoriteService.getFavorites();
 		var item = favorites[path];
 		$scope.favoriteOff = !angular.isDefined(item);
-
-		//FavoriteService.setToggleFavoriteButton(title, path);
 	}
 	
 	$scope.addPoint = function(points) {
@@ -26,5 +24,9 @@ app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$locati
 
 	$scope.myFavorites = function() {
 		$location.path('/myFavorites');
+	}
+	
+	$scope.backToGame = function() {
+		$location.path('plateau');
 	}
 }]);

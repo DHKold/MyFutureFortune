@@ -1,13 +1,15 @@
 <div class="container">
-	<div class="highlight">
-	Tu veux acheter ton appart avec un crédit? Bravo!
-	</div>
-	<div class="bs-callout bs-callout-warning">
-		As-tu déjà calculé ce que tu peux raisonnablement rembourser chaque mois ?
-			<div class="row">
-				<button type="button" class="btn btn-default" ng-click="answer(true)">Oui</button>
-				<button type="button" class="btn btn-default" ng-click="answer(false)">Non</button>
-			</div>
+	<div class="question" ng-show="!answered">
+		<div class="highlight">
+		Tu veux acheter ton appart avec un crédit? Bravo!
+		</div>
+		<div class="bs-callout bs-callout-warning">
+			As-tu déjà calculé ce que tu peux raisonnablement rembourser chaque mois ?
+				<div class="row">
+					<button type="button" class="btn btn-default" ng-click="answer(true)">Oui</button>
+					<button type="button" class="btn btn-default" ng-click="answer(false)">Non</button>
+				</div>
+		</div>
 	</div>
 	<div class="answerKO" ng-show="answered && !ok">
 		<div class="highlight">
@@ -41,7 +43,7 @@ Fais le calcul ci dessous:
 	</div>
 	<div class="answerOK" ng-show="answered && ok">
 		<div class="highlight">
-			Tu ne savais pas quand...
+			Bien joué!
 		</div>
 		<div class="highlight">
 			Petit cadeau d'une citation
