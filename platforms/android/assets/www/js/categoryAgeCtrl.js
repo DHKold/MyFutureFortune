@@ -1,5 +1,7 @@
-app.controller('CategoryAgeCtrl', ['$scope', function ($scope) {
+app.controller('CategoryAgeCtrl', ['$scope', '$rootScope', '$location', function ($scope, $rootScope, $location) {
+	$rootScope.showFavorite = false;
+
 	$scope.selectCategoryAge = function() {
-		alert("you selected this item");
+		$location.path('plateau');
 	};
 }]);

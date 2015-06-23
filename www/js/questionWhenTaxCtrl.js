@@ -9,5 +9,6 @@ app.controller('QuestionWhenTaxCtrl', ['$scope', 'FavoriteService', function ($s
 		}
 		$scope.answered = true;
 		$scope.ok = a;
+		$scope.initPanel(null, "aFaireImpot");
 	}
 }]);

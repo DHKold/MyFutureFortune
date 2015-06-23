@@ -45,10 +45,10 @@
 				<img src="img/favoriteOff.png" ng-show="favoriteOff" ng-click="toggleFavorite()" />
 				<img src="img/favoriteOn.png" ng-show="!favoriteOff" ng-click="toggleFavorite()" />
 			</div>
-				<button ng-click="myFavorites()">Mes favoris</button>
-				<button ng-click="backToGame()">Retour au jeu</button>
-				<button ng-click="nextNext</button>
-			<div ng-cloak class="points">
+				<button class="btn btn-default" ng-click="myFavorites()">Mes favoris</button>
+				<button class="btn btn-default" ng-click="backToGame()" ng-show="backEnabled">Retour au jeu</button>
+				<button class="btn btn-default" ng-show="nextEnabled" ng-click="next()"><span class="glyphicon glyphicon-chevron-right"></span>Jouer</button>
+			<div class="points">
 				Score: {{points}}
 			</div>
 		</div>
@@ -67,6 +67,8 @@
         <script type="text/javascript" src="js/favoriteService.js"></script>
         <script type="text/javascript" src="js/cinemaCtrl.js"></script>
         <script type="text/javascript" src="js/salarieCtrl.js"></script>
+        <script type="text/javascript" src="js/indexCtrl.js"></script>
+        <script type="text/javascript" src="js/aFaireImpotCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/plateau.js"></script>
 	<script type="text/javascript" src="js/services/Game.js"></script>
         <script type="text/javascript" src="cordova.js"></script>

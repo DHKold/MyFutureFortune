@@ -25,14 +25,16 @@ app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location){
 		};
 	}
 	
+	$scope.initPanel(null, null);
+	
 	// Init tiles
 	if (!GameSvc.hasBeenLoaded){
 		GameSvc.setTile(2, { action: chainToScreenAction('questionWhenTax') });
-		GameSvc.setTile(3, { action: chainToScreenAction('infoEquilibrer') });
+		GameSvc.setTile(3, { action: chainToScreenAction('aFaireImpot') });
 		GameSvc.setTile(4, { action: chainToScreenAction('acheterAppart') });
 		GameSvc.setTile(5, { action: chainToScreenAction('aimePeche') });
 		GameSvc.setTile(6, { action: chainToScreenAction('cinema') });
-		GameSvc.setTile(7, { action: chainToScreenAction('salarie') });
+		GameSvc.setTile(7, { action: chainToScreenAction('index') });
 		GameSvc.setTile(8, { action: chainToScreenAction('index') });
 		GameSvc.setTile(9, { action: chainToScreenAction('index') });
 		GameSvc.setTile(10, { action: chainToScreenAction('index') });

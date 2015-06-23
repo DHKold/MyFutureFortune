@@ -24,6 +24,35 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'EquilibrerCtrl',
         controllerAs: 'equilibrer'
       })
+	  .when('/acheterAppart', {
+        templateUrl: 'partials/acheterAppart.html',
+        controller: 'AcheterAppartCtrl',
+        controllerAs: 'acheterAppart'
+      })
+	  .when('/myFavorites', {
+        templateUrl: 'partials/myFavorites.html',
+        controller: 'MyFavoritesCtrl',
+        controllerAs: 'myFavorites'
+      })
+	  .when('/aimePeche', {
+        templateUrl: 'partials/aimePeche.html',
+        controller: 'AimePecheCtrl',
+        controllerAs: 'aimePeche'
+      })
+	  .when('/cinema', {
+        templateUrl: 'partials/cinema.html',
+        controller: 'CinemaCtrl',
+        controllerAs: 'cinema'
+      })
+	  .when('/salarie', {
+        templateUrl: 'partials/salarie.html',
+        controller: 'SalarieCtrl',
+        controllerAs: 'salarie'
+      })
+	  .when('/plateau', {
+        templateUrl: 'partials/plateau.html',
+        controller: 'PlateauCtrl'
+      })
 	  .otherwise({redirectTo: 'questionWhenTax'});
 
 //    $locationProvider.html5Mode(true);

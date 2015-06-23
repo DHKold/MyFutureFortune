@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="question" ng-show="!answered">
-		<div class="highlight">
+		<div class="highlight red">
 		Pas de chance, tu vas (encore) payer des impôts!
 		</div>
 		<div class="bs-callout bs-callout-warning">
@@ -11,9 +11,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="answerOK" ng-show="answered && ok">
-		<div class="highlight">
-			Tu savais quand...
+	<div class="answerKO" ng-show="answered && !ok">
+		<div class="highlight orange">
+			Tu ne savais pas quand...
 		</div>
 		<div class="bs-callout bs-callout-warning">
 			Déclaration avril-mai selon ta zone (juin sur internet)
@@ -25,9 +25,9 @@
 			Paiement trimestriel (le 1er juin en octobre) ou mensualités
 		</div>
 	</div>
-	<div class="answerKO" ng-show="answered && !ok">
+	<div class="answerOK" ng-show="answered && ok">
 		<div class="highlight">
-			Tu ne savais pas quand...
+			Tu savais quand...
 		</div>
 		<div class="highlight">
 			Petit cadeau d'une citation
