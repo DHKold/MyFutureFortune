@@ -62,11 +62,29 @@ Fais le calcul ci dessous:
 	</div>
 	</div>
 	<div ng-show="finalResult">
-		<div class="highlight">
-		Voici ta capacité d'épargne:
+		<div ng-show="first">
+			<div class="highlight">
+			Voici ta capacité d'épargne:
+			</div>
+			<div class="bs-callout bs-callout-warning">
+				1500€/mois
+			</div>
+			<button type="submit" class="btn btn-default" ng-click="suivant()">Suivant</button>
 		</div>
-		<div class="bs-callout bs-callout-warning">
-			1500€/mois
+		<div ng-show="!first">
+			<div class="highlight">
+			Voici le montant que tu peux emprunter selon la durée
+			</div>
+			<div class="highlight red">
+Il tient compte des frais de Notaire (env. 7% dans l’ancien)
+			</div>
+			<div class="bs-callout bs-callout-warning">
+				<ul>
+				<li>Sur 15 ans: 130000€</li>
+				<li>Sur 20 ans: 140000€</li>
+				<li>Sur 25 ans: 150000€</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

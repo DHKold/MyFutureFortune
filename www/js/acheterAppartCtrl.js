@@ -1,6 +1,7 @@
 app.controller('AcheterAppartCtrl', ['$scope', function ($scope) {
-	$scope.initFavorite('Acheter son appartement');
+	$scope.initPanel('Acheter son appartement', null);
 	$scope.finalResult = false;
+	$scope.first = true;
 	$scope.answer = function(b) {
 		$scope.answered = true;
 		$scope.ok = b;
@@ -9,4 +10,9 @@ app.controller('AcheterAppartCtrl', ['$scope', function ($scope) {
 	$scope.compute = function() {
 		$scope.finalResult = true;
 	}
+	
+	$scope.suivant = function() {
+		$scope.first = false;
+		$scope.initPanel('Acheter son appartement', 'plateau');
+	};
 }]);
