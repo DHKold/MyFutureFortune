@@ -33,7 +33,7 @@ app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$locati
 	}
 	
 	$scope.next = function() {
-		$location.path(next);
+		$location.path("plateau");
 	}
 	
 	$scope.initPanel = function(title, nextPath) {

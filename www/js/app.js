@@ -57,6 +57,10 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/aFaireImpot.html',
         controller: 'AFaireImpotCtrl'
       })
+	  .when('/immo', {
+        templateUrl: 'partials/immo.html',
+        controller: 'ImmoCtrl'
+      })
 	  .otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);
