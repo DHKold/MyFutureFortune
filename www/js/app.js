@@ -5,9 +5,9 @@ app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/index', {
-        templateUrl: 'partials/index.html'
-//        controller: 'IndexCtrl',
-//        controllerAs: 'index'
+        templateUrl: 'partials/index.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'index'
       })
       .when('/categoryAge', {
         templateUrl: 'partials/categoryAge.html',
@@ -52,6 +52,10 @@ app.config(['$routeProvider', '$locationProvider',
 	  .when('/plateau', {
         templateUrl: 'partials/plateau.html',
         controller: 'PlateauCtrl'
+      })
+	  .when('/aFaireImpot', {
+        templateUrl: 'partials/aFaireImpot.html',
+        controller: 'AFaireImpotCtrl'
       })
 	  .otherwise({redirectTo: 'index'});
 

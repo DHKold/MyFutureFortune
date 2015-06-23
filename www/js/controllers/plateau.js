@@ -10,6 +10,7 @@ Tile = function(id, options){
 };
 
 app.controller('PlateauCtrl', function($scope, GameSvc){
+	$scope.initPanel(null, null);
 	// Dummy
 	function resolved(){
 		var def = new $.Deferred();
