@@ -40,9 +40,15 @@
     <body ng-app="MyFutureFortuneApp" ng-controller="PanelCtrl">
 		<div ng-view class="view-animate"></div>
 		<div id="navFooter" ng-hide="$root.footer">
-			<div class="favorite">
+			<div class="favorite" ng-show="showFavorite">
 				<img src="img/favoriteOff.png" ng-show="favoriteOff" ng-click="toggleFavorite()" />
 				<img src="img/favoriteOn.png" ng-show="!favoriteOff" ng-click="toggleFavorite()" />
+			</div>
+			<div class="myFavorites">
+				<button ng-click="myFavorites()">Mes favoris</button>
+			</div>
+			<div class="backToGame">
+				<button ng-click="backToGame()">Retour au jeu</button>
 			</div>
 			<div ng-cloak class="points">
 				Score: {{points}}
@@ -57,6 +63,9 @@
         <script type="text/javascript" src="js/panelCtrl.js"></script>
         <script type="text/javascript" src="js/categoryAgeCtrl.js"></script>
         <script type="text/javascript" src="js/questionWhenTaxCtrl.js"></script>
+        <script type="text/javascript" src="js/acheterAppartCtrl.js"></script>
+        <script type="text/javascript" src="js/myFavoritesCtrl.js"></script>
+        <script type="text/javascript" src="js/favoriteService.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

@@ -24,6 +24,16 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'EquilibrerCtrl',
         controllerAs: 'equilibrer'
       })
+	  .when('/acheterAppart', {
+        templateUrl: 'partials/acheterAppart.html',
+        controller: 'AcheterAppartCtrl',
+        controllerAs: 'acheterAppart'
+      })
+	  .when('/myFavorites', {
+        templateUrl: 'partials/myFavorites.html',
+        controller: 'MyFavoritesCtrl',
+        controllerAs: 'myFavorites'
+      })
 	  .otherwise({redirectTo: 'index'});
 
 //    $locationProvider.html5Mode(true);

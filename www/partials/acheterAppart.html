@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="highlight">
+	Tu veux acheter ton appart avec un crédit? Bravo!
+	</div>
+	<div class="bs-callout bs-callout-warning">
+		As-tu déjà calculé ce que tu peux raisonnablement rembourser chaque mois ?
+			<div class="row">
+				<button type="button" class="btn btn-default" ng-click="answer(true)">Oui</button>
+				<button type="button" class="btn btn-default" ng-click="answer(false)">Non</button>
+			</div>
+	</div>
+	<div class="answerKO" ng-show="answered && !ok">
+		<div class="highlight">
+Tu as répondu non.
+Fais le calcul ci dessous:
+		</div>
+		<div class="bs-callout bs-callout-warning">
+			<form class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+				<label for="income">Salaire net/an</label>
+				<input type="number" name="income" class="form-control" placeholder="Salaire net/an">
+			  </div>
+			  <div class="form-group">
+				<input type="number" class="form-control" placeholder="Crédit en cours">
+			  </div>
+			  <div class="form-group">
+				<input type="number" class="form-control" placeholder="Nourriture">
+			  </div>
+			  <div class="form-group">
+				<input type="number" class="form-control" placeholder="Assurance">
+			  </div>
+			  <div class="form-group">
+				<input type="number" class="form-control" placeholder="Transport, auto">
+			  </div>
+			  <div class="form-group">
+				<input type="number" class="form-control" placeholder="Loisirs">
+			  </div>
+			  <button type="submit" class="btn btn-default">Calculer</button>
+			</form>
+		</div>
+	</div>
+	<div class="answerOK" ng-show="answered && ok">
+		<div class="highlight">
+			Tu ne savais pas quand...
+		</div>
+		<div class="highlight">
+			Petit cadeau d'une citation
+		</div>
+		<div class="bs-callout bs-callout-info">
+			"Vous n'avez pas raison parce que d'autres sont d'accord avec vous. Vous avez raison parce que votre raisonnement est juste".<br />
+			Warren Buffet.
+		</div>
+	</div></div>

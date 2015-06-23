@@ -1,3 +1,10 @@
+body {
+	/*background-image: url(../img/background.png);
+	background-size: cover;*/
+}
+.container {
+	margin-top: 5%;
+}
 .categoryAge  .row {
   margin-top: 30px;
   margin-bottom: 30px;

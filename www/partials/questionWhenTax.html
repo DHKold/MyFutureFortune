@@ -11,7 +11,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="answerOK" ng-show="answered && ok">
+	<div class="answerKO" ng-show="answered && !ok">
 		<div class="highlight">
 			Tu savais quand...
 		</div>
@@ -25,7 +25,7 @@
 			Paiement trimestriel (le 1er juin en octobre) ou mensualités
 		</div>
 	</div>
-	<div class="answerKO" ng-show="answered && !ok">
+	<div class="answerOK" ng-show="answered && ok">
 		<div class="highlight">
 			Tu ne savais pas quand...
 		</div>

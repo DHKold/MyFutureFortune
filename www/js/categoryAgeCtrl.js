@@ -1,5 +1,5 @@
-app.controller('CategoryAgeCtrl', ['$scope', function ($scope) {
+app.controller('CategoryAgeCtrl', ['$scope', '$location', function ($scope, $location) {
 	$scope.selectCategoryAge = function() {
-		alert("you selected this item");
+		$location.path('plateau');
 	};
 }]);
