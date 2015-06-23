@@ -5,9 +5,9 @@ app.service('ScenarioSvc', function(){
 		
 		init : function(){
 			this.currentStep = 0;
-			this.actions.push({ screen : 'questionWhenTax' });
+			this.actions.push({ screen : 'questionWhenTax', image:'tax', title:'Imp&ocirc;ts', dice:5 });
 			this.actions.push({ screen : 'aFaireImpot' });
-			this.actions.push({ screen : 'acheterAppart' });
+			this.actions.push({ screen : 'acheterAppart', image:'house', title:'Immobilier', dice:4 });
 			this.actions.push({ screen : 'immo' });
 			this.actions.push({ handler : function(){ alert('Step 3'); } });
 			this.actions.push({ handler : function(){ alert('Step 4'); } });
@@ -25,6 +25,12 @@ app.service('ScenarioSvc', function(){
 			// Redirect to a screen
 			++this.currentStep;
 			return action;
+		},
+		
+		getNextDice : function(){
+			if (!this.actions[this.currentStep]) return false;
+			action = this.actions[this.currentStep];
+			return action.dice || false;
 		}
 	};
 });

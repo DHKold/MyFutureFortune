@@ -55,7 +55,7 @@ app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location, S
 	
 		// Animate
 		var elem = $('#game-card');
-		elem.text(title);
+		elem.html(title);
 		elem.show();
 		elem.css({ left:'50%', top:'50%', width:0, height:0, backgroundImage:"url('img/tiles/"+image+".png')" });
 		elem.animate({ left:'0', top:'0', width:'100%', height:'100%' }, { complete : function(){ 
@@ -75,15 +75,18 @@ app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location, S
 				});
 			});
 		}
+		GameSvc.forceValue = ScenarioSvc.getNextDice();
 		return resolved();
 	}
 	
 	// Initialize Panel
 	$scope.initPanel(null, null);
+	GameSvc.forceValue = GameSvc.forceValue || false;
 	
 	// Init tiles
 	if (!GameSvc.hasBeenLoaded){
 		ScenarioSvc.init();
+		GameSvc.forceValue = ScenarioSvc.getNextDice();
 	
 		for (var i = 2; i<=42; ++i){
 			GameSvc.setTile(i, { action: scenarioAction });
