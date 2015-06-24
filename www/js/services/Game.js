@@ -7,6 +7,10 @@ app.service('GameSvc', function(){
 		tiles			: [],
 		score			: 0,
 		
+		sounds_enabled	: true,
+		
+		cache_sounds	: {},
+		
 		// Set a tile
 		setTile : function(id, options){
 			this.tiles[id] = new Tile(id, options);
@@ -29,6 +33,16 @@ app.service('GameSvc', function(){
 			$('#dicewait').show();
 		},
 		
+		// Play a sound
+		playSound : function(sound){
+			// Muted
+			if (!this.sounds_enabled) return;
+			
+			// Load sound
+			if (!this.cache_sounds[sound]) this.cache_sounds[sound] = new Audio('sounds/'+sound+'.wav');
+			this.cache_sounds[sound].play();
+		},
+		
 		// Put the piece on a tile
 		putPieceOnTile : function(tileId, animate, follow){
 			// Get the tile
@@ -43,12 +57,19 @@ app.service('GameSvc', function(){
 				return { left: left+'px', top: top+'px' };
 			}
 			
-			// Handler
+			// Handlers
 			var def = new $.Deferred();
+			var Game = this;
+			
+			function hPlaySound(){
+				if (animate) Game.playSound('pawn');
+			}
+			
 			function hMoveDone(){
+				if (animate) Game.playSound('pawn');
 				window.setTimeout(function(){
 					def.resolve(tileId);
-				}, 1500);
+				}, 1000);
 			}
 			
 			// Move the pawn
@@ -56,7 +77,7 @@ app.service('GameSvc', function(){
 				if (follow){
 					for (var i = this.progress+1; i<tileId; ++i){
 						var props = getTilePosition(i);
-						piece.animate(props);
+						piece.animate(props, { complete : hPlaySound });
 					}
 				}
 				var props = getTilePosition(tileId);
@@ -75,6 +96,7 @@ app.service('GameSvc', function(){
 		// Roll the dice
 		rollDice : function(forceValue){
 			// Init
+			Game.playSound('dice');
 			var def = $.Deferred();
 			
 			function randomDice(forceValue){
@@ -87,7 +109,7 @@ app.service('GameSvc', function(){
 			$('#dicewait').hide();
 			
 			// Roll
-			var MaxRolls = Math.floor(Math.random() * 8) + 5;
+			var MaxRolls = 11;
 			var rolling = window.setInterval(function(){
 				randomDice();
 				if (MaxRolls-- <= 0){
