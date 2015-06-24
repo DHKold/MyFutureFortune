@@ -4,11 +4,17 @@
 	</div>
 	<div class="bs-callout bs-callout-warning">
 		Equilibrer peu à peu ton patrimoine.
-		<ul>
-			<li>un programme d'énergie alternative</li>
-			<li>un projet d'équipement automobile</li>
-			<li>un plan d'épargne actions</li>
-		</ul>
+		
+		<div class="col-md-12" id="line1">
+			<button type="submit" class="btn btn-default btn-block" ng-click="answer(0)" ng-class="{redText: answered}">Un programme d'énergie<br /> alternative</button>
+		</div>
+		<div class="col-md-12" id="line2">
+		<button type="submit" class="btn btn-default btn-block" ng-click="answer(1)" ng-class="{redText: answered}">Un projet d'équipement<br />automobile</button>
+		</div>
+		<div class="col-md-12" id="line3">
+		<button type="submit" class="btn btn-default btn-block" ng-click="answer(2)" ng-class="{greenText: answered}">Un plan d'épargne actions</button>
+		</div>
+
 	</div>
 
 </div>
