@@ -106,3 +106,7 @@ max-width: auto;
 .imageResult {
 	height: 24px;
 }
+
+.bold {
+	font-weight: bold;
+}
