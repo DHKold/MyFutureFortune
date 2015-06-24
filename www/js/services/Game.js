@@ -7,7 +7,7 @@ app.service('GameSvc', function(){
 		tiles			: [],
 		score			: 0,
 		
-		sounds_enabled	: true,
+		sounds_enabled	: false,
 		
 		cache_sounds	: {},
 		
@@ -105,15 +105,20 @@ app.service('GameSvc', function(){
 			// Init
 			Game.playSound('dice');
 			var def = $.Deferred();
+			var dice = $('#dice');
 			
 			function randomDice(forceValue){
 				var diceValue = forceValue || Math.floor(Math.random() * 6 + 1);
-				$('#dice').css('backgroundPosition',((diceValue-1) * 20)+'% 0');
+				dice.css('backgroundPosition',((diceValue-1) * 20)+'% 0');
 				return diceValue;
 			}
 			
 			// Hide helper
 			$('#dicewait').hide();
+			
+			// Dice Animation
+			var maxMargin = $('.diceroll').innerWidth() - dice.width() - 5;
+			dice.animate({ marginRight : maxMargin+'px'}, 1250).animate({ marginRight : '5px' }, 1250);
 			
 			// Roll
 			var MaxRolls = 11;
