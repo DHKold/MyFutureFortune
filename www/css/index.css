@@ -72,6 +72,9 @@ max-height:32px;
 max-width: auto;
 }
 
+.reset {
+	float:right;
+}
 .trophy {
 	float: right;
 }

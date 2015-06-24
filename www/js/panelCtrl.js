@@ -1,4 +1,4 @@
-app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$location', function ($scope, $rootScope, FavoriteService, $location) {
+app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$location', 'ScenarioSvc', 'GameSvc', '$timeout', function ($scope, $rootScope, FavoriteService, $location, ScenarioSvc, GameSvc, $timeout) {
 	$scope.points = 0;
 	$rootScope.showFavorite = true;
 	$rootScope.nextEnabled = true;
@@ -75,4 +75,12 @@ function getRandomInt(min, max) {
 	$scope.trophy = function() {
 		$location.path("/trophy");
 	};
+	
+	$scope.reset = function() {
+		$location.path("plateau");
+		$timeout(function() {
+			ScenarioSvc.init();
+			GameSvc.start();
+		}, 500);
+	}
 }]);

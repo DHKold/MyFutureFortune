@@ -59,8 +59,8 @@ app.service('GameSvc', function(){
 			function getTilePosition(tileId){
 				var tile = $('#tile'+tileId);
 				var position = tile.position();
-				var left = position.left + tile.width()/2 - 10;
-				var top = position.top + tile.height()/2 - 10;
+				var left = position.left + (tile.width()-piece.width())/2;
+				var top = position.top + (tile.height()-piece.height())/2;
 				return { left: left+'px', top: top+'px' };
 			}
 			
@@ -105,15 +105,20 @@ app.service('GameSvc', function(){
 			// Init
 			Game.playSound('dice');
 			var def = $.Deferred();
+			var dice = $('#dice');
 			
 			function randomDice(forceValue){
 				var diceValue = forceValue || Math.floor(Math.random() * 6 + 1);
-				$('#dice').css('backgroundPosition',((diceValue-1) * 20)+'% 0');
+				dice.css('backgroundPosition',((diceValue-1) * 20)+'% 0');
 				return diceValue;
 			}
 			
 			// Hide helper
 			$('#dicewait').hide();
+			
+			// Dice Animation
+			var maxMargin = $('.diceroll').innerWidth() - dice.width() - 5;
+			dice.animate({ marginRight : maxMargin+'px'}, 1250).animate({ marginRight : '5px' }, 1250);
 			
 			// Roll
 			var MaxRolls = 11;

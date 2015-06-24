@@ -1,7 +1,11 @@
+html, body{
+	height: 100%;
+}
+
 body {
-	background: url(../img/sky.png) no-repeat;
-	/*background-size: cover;
-	background-size: 100%;*/
+	background: url('../img/sky.png') no-repeat;
+	background-color: #58B7FF;
+	background-position: bottom center;
 	font-size: 22px;
 }
 
@@ -68,6 +72,9 @@ max-height:32px;
 max-width: auto;
 }
 
+.reset {
+	float:right;
+}
 .trophy {
 	float: right;
 }
@@ -101,4 +108,8 @@ max-width: auto;
 
 .imageResult {
 	height: 24px;
+}
+
+.bold {
+	font-weight: bold;
 }
