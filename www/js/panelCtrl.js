@@ -81,6 +81,7 @@ function getRandomInt(min, max) {
 		$timeout(function() {
 			ScenarioSvc.init();
 			GameSvc.start();
+			GameSvc.forceValue = ScenarioSvc.getNextDice();
 		}, 500);
 	}
 }]);
