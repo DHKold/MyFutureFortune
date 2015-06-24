@@ -102,11 +102,12 @@
 		position:			absolute;
 		top:				20px;
 		left:				20px;
-		border-radius:		50%;
-		background:			#AA0000;
-		width:				20px;
-		height:				20px;
-		border:				5px #770000 solid;
+		background-image:	url('../img/pawn.png');
+		background-repeat:	no-repeat;
+		background-position:center;
+		background-size:	contain;
+		width:				30px;
+		height:				30px;
 		z-index:			100;
 	}
 	
