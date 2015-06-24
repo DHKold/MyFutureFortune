@@ -59,8 +59,8 @@ app.service('GameSvc', function(){
 			function getTilePosition(tileId){
 				var tile = $('#tile'+tileId);
 				var position = tile.position();
-				var left = position.left + tile.width()/2 - 10;
-				var top = position.top + tile.height()/2 - 10;
+				var left = position.left + (tile.width()-piece.width())/2;
+				var top = position.top + (tile.height()-piece.height())/2;
 				return { left: left+'px', top: top+'px' };
 			}
 			
