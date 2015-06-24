@@ -98,3 +98,7 @@ max-width: auto;
 .orange {
 	background-color: #FFA319;
 }
+
+.imageResult {
+	height: 24px;
+}

@@ -37,7 +37,7 @@
 -->	
 	<div class="screen3">
 		<div class="highlight">
-	Je suis logé(e) chez mes parents, pour monter mon dossier de prêt, quels justificatifs de domicile dois-je fournir ?
+	Je suis logé(e) chez mes parents. Pour monter mon dossier de prêt, quels justificatifs de domicile dois-je fournir ?
 		</div>
 		<div class="bs-callout bs-callout-warning">
 	<div class="row">
@@ -52,9 +52,40 @@
 		</div>
 	</div>
 	<br />
+	<span id="additional">
 	*Accompagnée de la pièce d'identité de la personne qui héberge ainsi qu’un justificatif de domicile à son nom.
+	</span>
 		</div>
 	</div>
+	
+		<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+			<div class="col-xs-3">
+				<img src="img/correct.png" class="img-responsive imageResult" ng-show="correct" />
+				<img src="img/error.png" class="img-responsive imageResult" ng-show="!correct" />
+			</div>
+			<div class="col-xs-8">
+				<span id="text">Some text in the modal.</span>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 	<!--
 	<div class="screen4" ng-show="screen4">
 		<div class="bs-callout bs-callout-warning">

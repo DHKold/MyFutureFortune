@@ -72,6 +72,10 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/warren.html',
         controller: 'WarrenCtrl'
       })
+	  .when('/glossaire', {
+        templateUrl: 'partials/glossaire.html',
+        controller: 'GlossaireCtrl'
+      })
 	  .otherwise({redirectTo: 'index'});
 //    $locationProvider.html5Mode(true);
 }])

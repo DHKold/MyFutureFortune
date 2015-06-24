@@ -6,7 +6,7 @@ app.service('ScenarioSvc', function(){
 		init : function(){
 			this.currentStep = 0;
 			this.actions.push({ screen : 'questionWhenTax', image:'tax', title:'Imp&ocirc;ts', dice:5 });
-			this.actions.push({ screen : 'PEA', image: 'quizz', title: 'Quizz'});
+			this.actions.push({ screen : 'PEA', image: 'quizz', title: 'Quizz<br />Bourse'});
 			this.actions.push({ screen : 'acheterAppart', image:'house', title:'Immobilier', dice:4 });
 			this.actions.push({ screen : 'immo' });
 			this.actions.push({ screen : 'warren' });

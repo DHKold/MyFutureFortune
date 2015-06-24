@@ -1,5 +1,5 @@
 app.controller('TrophyCtrl', ['$scope', function ($scope) {
-	$scope.initFavorite('Salarié: Plan d\'épargne');
+	$scope.initPanel(null, "plateau");
 	$scope.showTrophy = function(i) {
 		$("#myModal").modal();
 	};

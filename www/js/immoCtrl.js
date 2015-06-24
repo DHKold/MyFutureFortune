@@ -17,7 +17,25 @@ app.controller('ImmoCtrl', ['$scope', function ($scope) {
 		$scope['screen' + counter] = true;
 	};*/
 	
+	$("#additional").hide();
 	$scope.answer = function(i) {
+			$("#additional").show();
+			if (i == 2) {
+			$scope.correct = true;
+			$("#text").text("Correct!");
+			$("#myModal").modal();
+			setTimeout(function() {
+				$("#myModal").modal('hide');
+			}, 2000);
+		} else {
+			$scope.correct = false;
+			$("#text").text("Faux! ");
+			$("#myModal").modal();
+			setTimeout(function() {
+				$("#myModal").modal('hide');
+			}, 2000);
+		}
+
 		$scope.answered = true;
 		$("button").blur();
 		$scope.initPanel('Immobilier: quiz', "plateau");

@@ -3,8 +3,6 @@
 	Selon toi, un PEA c'est:
 	</div>
 	<div class="bs-callout bs-callout-warning">
-		Equilibrer peu à peu ton patrimoine.
-		
 		<div class="col-md-12" id="line1">
 			<button type="submit" class="btn btn-default btn-block" ng-click="answer(0)" ng-class="{redText: answered}">Un programme d'énergie<br /> alternative</button>
 		</div>
@@ -17,4 +15,31 @@
 
 	</div>
 
+	<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+			<div class="col-xs-3">
+				<img src="img/correct.png" class="img-responsive imageResult" ng-show="correct" />
+				<img src="img/error.png" class="img-responsive imageResult" ng-show="!correct" />
+			</div>
+			<div class="col-xs-8" style="vertical-align: middle; display: inline-block;">
+				<span id="text">Some text in the modal.</span>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </div>
