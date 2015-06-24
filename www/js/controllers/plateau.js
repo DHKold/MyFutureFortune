@@ -97,6 +97,13 @@ app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location, S
 		
 		GameSvc.start();
 		
+		window.setInterval(function(){
+		$('#dicewait')
+			.animate({ fontSize : '26px' })
+			.animate({ fontSize : '12px' })
+			.animate({ fontSize : '18px' });
+		}, 4000);
+		
 		GameSvc.hasBeenLoaded = true;
 	}
 	

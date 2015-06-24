@@ -6,7 +6,6 @@
 
 	.plateau{
 		width:				100%;
-		background:			#777777;
 		table-layout:		fixed;
 		border-collapse:	collapse;
 	}
@@ -75,6 +74,11 @@
 		border-bottom-left-radius: 50%;
 	}
 	
+	.tile-win{
+		border-top-left-radius: 50%;
+		border-top-right-radius: 50%;
+	}
+	
 /* Tiles */
 	.tile-start{	background-image: url('../img/tiles/start.png');	}
 	.tile-quizz{	background-image: url('../img/tiles/quizz.png');	}
@@ -116,15 +120,14 @@
 		border:				1px #777777 solid;
 		margin:				10px;
 		position:			relative;
-		text-align:			center;
+		text-align:			right;
 		height:				70px;
 		overflow:			hidden;
-		background:			white;
 	}
 	
 	.dicewait{
 		z-index:			100;
-		background-color:	rgba(180,180,180, 0.8);
+		background-color:	rgba(180,180,180, 0.3);
 		background-image:	url('../img/shake.png');
 		background-repeat:	no-repeat;
 		background-position:10px center;
@@ -146,9 +149,11 @@
 		background-repeat:		no-repeat;
 		background-position:	80% 0;
 		background-size:		cover;
+		background-color:		#FFFFFF;
 		height:					60px;
 		width:					60px;
 		margin:					5px;
+		border-radius:			6px;
 	}
 	
 /* Cards */
