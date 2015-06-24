@@ -7,7 +7,7 @@ app.service('GameSvc', function(){
 		tiles			: [],
 		score			: 0,
 		
-		sounds_enabled	: false,
+		sounds_enabled	: true,
 		
 		cache_sounds	: {},
 		
