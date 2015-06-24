@@ -7,6 +7,11 @@ app.controller('CategoryAgeCtrl', ['$scope', '$rootScope', '$location', function
 	};
 	
 	$scope.suivant = function() {
-		$location.path('plateau');
+		$("#myModal").modal('hide');
+		$('#myModal').on('hidden.bs.modal', function (e) {
+			$scope.$apply(function() {
+				$location.path('plateau');
+			});
+		});
 	}
 }]);
