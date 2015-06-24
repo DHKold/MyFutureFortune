@@ -64,9 +64,10 @@ function getRandomInt(min, max) {
 						enter: 'animated fadeInDown',
 						exit: 'animated fadeOutUp'
 					},
+					delay: 1000,
 					offset: 29
 				});
-			}, 2000);
+			}, 1000);
 		}
 		
 	};

@@ -43,6 +43,7 @@ app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location, S
 	$scope.openCard = function(image, title){
 		// Promise
 		var def = new $.Deferred();
+		GameSvc.playSound('card');
 		
 		// No content
 		if (!image && !title){

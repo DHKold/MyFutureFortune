@@ -39,8 +39,15 @@ app.service('GameSvc', function(){
 			if (!this.sounds_enabled) return;
 			
 			// Load sound
-			if (!this.cache_sounds[sound]) this.cache_sounds[sound] = new Audio('sounds/'+sound+'.wav');
-			this.cache_sounds[sound].play();
+			if (document.location.protocol == "file:") {
+				document.addEventListener("deviceready", function() {
+					 var my_media = new Media('file:///android_asset/www/sounds/'+sound+'.wav');
+					 my_media.play();
+				});
+			}else {
+				if (!this.cache_sounds[sound]) this.cache_sounds[sound] = new Audio('sounds/'+sound+'.wav');
+				this.cache_sounds[sound].play();
+			}
 		},
 		
 		// Put the piece on a tile

@@ -19,6 +19,7 @@ app.controller('AcheterAppartCtrl', ['$scope', function ($scope) {
 			enter: 'animated fadeInDown',
 			exit: 'animated fadeOutUp'
 		},
+		delay: 1000,
 		offset: 29
 	});
 

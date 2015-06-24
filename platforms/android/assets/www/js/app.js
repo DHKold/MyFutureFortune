@@ -64,6 +64,14 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/trophy.html',
         controller: 'TrophyCtrl'
       })
+	  .when('/PEA', {
+        templateUrl: 'partials/PEA.html',
+        controller: 'PEACtrl'
+      })
+	  .when('/warren', {
+        templateUrl: 'partials/warren.html',
+        controller: 'WarrenCtrl'
+      })
 	  .otherwise({redirectTo: 'index'});
 //    $locationProvider.html5Mode(true);
 }])
