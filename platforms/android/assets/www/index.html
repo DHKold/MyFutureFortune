@@ -32,10 +32,12 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" title="Stylev1" href="css/game.css" />
+		<link rel="stylesheet" type="text/css" href="css/animation.css">
+       <link rel="stylesheet" type="text/css" title="Stylev1" href="css/game.css" />
         <title>Hello World</title>
     </head>
     <body ng-app="MyFutureFortuneApp" ng-controller="PanelCtrl">
@@ -48,12 +50,14 @@
 				<button class="btn btn-default" ng-click="myFavorites()">Mes favoris</button>
 				<button class="btn btn-default" ng-click="backToGame()" ng-show="backEnabled">Retour au jeu</button>
 				<button class="btn btn-default" ng-show="nextEnabled" ng-click="next()"><span class="glyphicon glyphicon-chevron-right"></span>Jouer</button>
+			<div class="trophy"><img src="img/First_prize_trophy_64.png" ng-click="trophy()" /></div>
 			<div class="points">
 				Score: {{points}}
 			</div>
 		</div>
         <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="lib/bootstrap-notify.js"></script>
         <script type="text/javascript" src="lib/angular.js"></script>
         <script type="text/javascript" src="lib/angular-route.js"></script>
         <script type="text/javascript" src="lib/angular-animate.js"></script>
@@ -70,6 +74,7 @@
         <script type="text/javascript" src="js/indexCtrl.js"></script>
         <script type="text/javascript" src="js/aFaireImpotCtrl.js"></script>
         <script type="text/javascript" src="js/immoCtrl.js"></script>
+        <script type="text/javascript" src="js/trophyCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/plateau.js"></script>
 		<script type="text/javascript" src="js/services/Game.js"></script>
 		<script type="text/javascript" src="js/services/Scenario.js"></script>

@@ -1,4 +1,18 @@
-﻿Tile = function(id, options){
+﻿$.fn.animateRotate = function(angle, duration, easing, complete) {
+  var args = $.speed(duration, easing, complete);
+  var step = args.step;
+  return this.each(function(i, e) {
+    args.complete = $.proxy(args.complete, e);
+    args.step = function(now) {
+      $.style(e, 'transform', 'rotate(' + now + 'deg)');
+      if (step) return step.apply(e, arguments);
+    };
+
+    $({deg: 0}).animate({deg: angle}, args);
+  });
+};
+
+Tile = function(id, options){
 	// Init
 	this.id = id;
 	
@@ -25,24 +39,54 @@ app.controller('PlateauCtrl', function($rootScope, $scope, GameSvc, $location, S
 		};
 	}
 	
+	// Open a card
+	$scope.openCard = function(image, title){
+		// Promise
+		var def = new $.Deferred();
+		
+		// No content
+		if (!image && !title){
+			def.resolve();
+			return def.promise();
+		}
+		
+		// Prepare animation
+		$('.view-animate').addClass('card-animate');
+	
+		// Animate
+		var elem = $('#game-card');
+		elem.html(title);
+		elem.show();
+		elem.css({ left:'50%', top:'50%', width:0, height:0, backgroundImage:"url('img/tiles/"+image+".png')" });
+		elem.animate({ left:'0', top:'0', width:'100%', height:'100%' }, { complete : function(){ 
+			window.setTimeout(function(){ def.resolve(); }, 2000);
+		} });
+		
+		return def.promise();
+	};
+	
 	// Scenario
 	function scenarioAction(){
-		var screen = ScenarioSvc.nextAction();
-		if (screen){
-			$rootScope.$apply(function() {
-			console.log(screen);
-				$location.path('/'+screen);
+		var action = ScenarioSvc.nextAction();
+		if (action && action.screen){
+			$scope.openCard(action.image, action.title).then(function(){
+				$rootScope.$apply(function() {
+					$location.path('/'+action.screen);
+				});
 			});
 		}
+		GameSvc.forceValue = ScenarioSvc.getNextDice();
 		return resolved();
 	}
 	
 	// Initialize Panel
 	$scope.initPanel(null, null);
+	GameSvc.forceValue = GameSvc.forceValue || false;
 	
 	// Init tiles
 	if (!GameSvc.hasBeenLoaded){
 		ScenarioSvc.init();
+		GameSvc.forceValue = ScenarioSvc.getNextDice();
 	
 		for (var i = 2; i<=42; ++i){
 			GameSvc.setTile(i, { action: scenarioAction });

@@ -1,0 +1,81 @@
+	body{
+		overflow: hidden;
+	}
+
+	.card-animate{
+		position: absolute;
+	}
+
+/* Screens Animations * /
+	.view-animate.ng-enter{  
+		-webkit-animation:				enterBottom 0.2s both linear;
+		-moz-animation:					enterBottom 0.2s both linear;
+		animation:						enterBottom 0.2s both linear;
+	}*/
+	
+	.card-animate.ng-leave{
+		-webkit-animation:				enterBottom 0.5s both linear reverse;
+		-moz-animation:					enterBottom 0.5s both linear reverse;
+		animation:						enterBottom 0.5s both linear reverse;
+		z-index:						500;
+	}
+
+/******************************************************************************
+/** ANIMATIONS ***************************************************************/
+/*****************************************************************************/
+
+	/* slide in from the right */
+	@keyframes enterRight {
+		from 	{ transform: translateX(100%); }
+		to 		{ transform: translateX(0); }
+	}
+	@-moz-keyframes enterRight {
+		from 	{ -moz-transform: translateX(100%); }
+		to 		{ -moz-transform: translateX(0); }
+	}
+	@-webkit-keyframes enterRight {
+		from 	{ -webkit-transform: translateX(100%); }
+		to 		{ -webkit-transform: translateX(0); }
+	}
+
+	/* slide out to the left */
+	@keyframes enterLeft {
+		from 	{ transform: translateX(-100%); }
+		to 		{ transform: translateX(0); }
+	}
+	@-moz-keyframes enterLeft {
+		from 	{ -moz-transform: translateX(-100%); }
+		to 		{ -moz-transform: translateX(0); }
+	}
+	@-webkit-keyframes enterLeft {
+		from 	{ -webkit-transform: translateX(-100%); }
+		to 		{ -webkit-transform: translateX(0); }
+	}
+
+	/* Slide-In from the top */
+	@keyframes enterTop {
+		from 	{ transform: translateY(-100%); }
+		to 		{ transform: translateY(0); }
+	}
+	@-moz-keyframes enterTop {
+		from 	{ -moz-transform: translateY(-100%); }
+		to 		{ -moz-transform: translateY(0); }
+	}
+	@-webkit-keyframes enterTop {
+		from 	{ -webkit-transform: translateY(-100%); }
+		to 		{ -webkit-transform: translateY(0); }
+	}
+	
+	/* Slide-In from the bottom */
+	@keyframes enterBottom {
+		from 	{ transform: translateY(100%); }
+		to 		{ transform: translateY(0); }
+	}
+	@-moz-keyframes enterBottom {
+		from 	{ -moz-transform: translateY(100%); }
+		to 		{ -moz-transform: translateY(0); }
+	}
+	@-webkit-keyframes enterBottom {
+		from 	{ -webkit-transform: translateY(100%); }
+		to 		{ -webkit-transform: translateY(0); }
+	}

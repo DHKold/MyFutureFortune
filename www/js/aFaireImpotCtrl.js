@@ -1,4 +1,4 @@
 app.controller('AFaireImpotCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 	$rootScope.showFavorite = false;
-	$scope.initPanel(null, "categoryAge");
+	$scope.initPanel("A faire impot", "categoryAge", false);
 }]);

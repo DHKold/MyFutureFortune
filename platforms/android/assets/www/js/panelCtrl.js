@@ -6,6 +6,7 @@ app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$locati
 	var title;
 	var path;
 	var next;
+	var multiplayer = false;
 
 	$scope.initFavorite = function(t) {
 		title = t;
@@ -35,11 +36,42 @@ app.controller('PanelCtrl', ['$scope', '$rootScope', 'FavoriteService', '$locati
 	$scope.next = function() {
 		$location.path("plateau");
 	}
-	
-	$scope.initPanel = function(title, nextPath) {
+	// Returns a random integer between min (included) and max (excluded)
+// Using Math.round() will give you a non-uniform distribution!
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+
+  }
+	$scope.initPanel = function(title, nextPath, multiplayer) {
 		$scope.initFavorite(title);
 		$scope.showFavorite = title != null;
 		next = nextPath;
 		$rootScope.nextEnabled = nextPath != null;
+		multi = multiplayer;
+		if (multi) {
+			var t = ["LeGrandJojo", "Cedric", "Master", "grrr"];
+			var i = getRandomInt(0, t.length);
+			setTimeout(function() {
+				$.notify({
+					message: t[i] + ' est le premier a avoir trouvé la réponse' 
+				},{
+					type: 'info',
+					placement : {
+						'from': 'bottom',
+						'align': 'center'
+					},
+					animate: {
+						enter: 'animated fadeInDown',
+						exit: 'animated fadeOutUp'
+					},
+					offset: 29
+				});
+			}, 2000);
+		}
+		
+	};
+	
+	$scope.trophy = function() {
+		$location.path("/trophy");
 	};
 }]);

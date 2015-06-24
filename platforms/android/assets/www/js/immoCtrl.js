@@ -3,7 +3,7 @@ app.controller('ImmoCtrl', ['$scope', function ($scope) {
 	
 	var counter = 0;
 	var size = 5;
-	$scope.initPanel('Immobilier: quiz', null);
+	$scope.initPanel('Immobilier: quiz', null, true);
 	
 /*	$scope.screen0 = true;
 	$scope.suivant = function() {

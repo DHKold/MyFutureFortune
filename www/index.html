@@ -50,12 +50,14 @@
 				<button class="btn btn-default" ng-click="myFavorites()">Mes favoris</button>
 				<button class="btn btn-default" ng-click="backToGame()" ng-show="backEnabled">Retour au jeu</button>
 				<button class="btn btn-default" ng-show="nextEnabled" ng-click="next()"><span class="glyphicon glyphicon-chevron-right"></span>Jouer</button>
+			<div class="trophy"><img src="img/First_prize_trophy_64.png" ng-click="trophy()" /></div>
 			<div class="points">
 				Score: {{points}}
 			</div>
 		</div>
         <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="lib/bootstrap-notify.js"></script>
         <script type="text/javascript" src="lib/angular.js"></script>
         <script type="text/javascript" src="lib/angular-route.js"></script>
         <script type="text/javascript" src="lib/angular-animate.js"></script>
@@ -72,6 +74,9 @@
         <script type="text/javascript" src="js/indexCtrl.js"></script>
         <script type="text/javascript" src="js/aFaireImpotCtrl.js"></script>
         <script type="text/javascript" src="js/immoCtrl.js"></script>
+        <script type="text/javascript" src="js/trophyCtrl.js"></script>
+        <script type="text/javascript" src="js/PEACtrl.js"></script>
+        <script type="text/javascript" src="js/warrenCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/plateau.js"></script>
 		<script type="text/javascript" src="js/services/Game.js"></script>
 		<script type="text/javascript" src="js/services/Scenario.js"></script>

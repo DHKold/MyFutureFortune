@@ -1,16 +1,18 @@
 body {
-	background-image: url(../img/background.png);
-	background-size: cover;
-	font-size: 17px;
+	background: url(../img/sky.png) no-repeat;
+	/*background-size: cover;
+	background-size: 100%;*/
+	font-size: 22px;
+}
+
+.btn {
+	font-size: 19px;
 }
 .container {
 	margin-top: 5%;
 }
-.categoryAge  .row {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 10%;
-  margin-right: 10%;
+.categoryAge  .row button {
+	line-height: 6;
 }
 
 .bs-callout {
@@ -61,9 +63,13 @@ body {
 	float:left;
 }
 
-.favorite img {
+#navFooter img {
 max-height:32px;
 max-width: auto;
+}
+
+.trophy {
+	float: right;
 }
 
 .points {
@@ -72,6 +78,11 @@ max-width: auto;
 
 .red {
 	background-color:#FF4D4D;
+}
+
+#questionWhenTax {
+	color: white;
+	font-size: 20;
 }
 
 .green {

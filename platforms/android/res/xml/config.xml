@@ -25,7 +25,7 @@
     <splash density="port-mdpi" src="images/android/drawable-port-mdpi/screen.png" />
     <splash density="port-hdpi" src="images/android/drawable-port-hdpi/screen.png" />
     <splash density="port-xhdpi" src="images/android/drawable-port-xhdpi/screen.png" />
-    <name>HelloCordova</name>
+    <name>My Fortune</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -42,6 +42,6 @@
     <allow-intent href="geo:*" />
     <preference name="Orientation" value="portrait" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="SplashScreenDelay" value="4000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
 </widget>

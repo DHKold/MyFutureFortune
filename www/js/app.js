@@ -60,9 +60,17 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/immo.html',
         controller: 'ImmoCtrl'
       })
-	  .when('/splash', {
-        templateUrl: 'partials/splash.html',
-        controller: 'SplashCtrl'
+	  .when('/trophy', {
+        templateUrl: 'partials/trophy.html',
+        controller: 'TrophyCtrl'
+      })
+	  .when('/PEA', {
+        templateUrl: 'partials/PEA.html',
+        controller: 'PEACtrl'
+      })
+	  .when('/warren', {
+        templateUrl: 'partials/warren.html',
+        controller: 'WarrenCtrl'
       })
 	  .otherwise({redirectTo: 'index'});
 //    $locationProvider.html5Mode(true);

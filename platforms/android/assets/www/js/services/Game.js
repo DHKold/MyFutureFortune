@@ -46,7 +46,9 @@ app.service('GameSvc', function(){
 			// Handler
 			var def = new $.Deferred();
 			function hMoveDone(){
-				def.resolve(tileId);
+				window.setTimeout(function(){
+					def.resolve(tileId);
+				}, 1500);
 			}
 			
 			// Move the pawn
@@ -71,12 +73,12 @@ app.service('GameSvc', function(){
 		},
 		
 		// Roll the dice
-		rollDice : function(){
+		rollDice : function(forceValue){
 			// Init
 			var def = $.Deferred();
 			
-			function randomDice(){
-				var diceValue = Math.floor(Math.random() * 6 + 1);
+			function randomDice(forceValue){
+				var diceValue = forceValue || Math.floor(Math.random() * 6 + 1);
 				$('#dice').css('backgroundPosition',((diceValue-1) * 20)+'% 0');
 				return diceValue;
 			}
@@ -87,8 +89,9 @@ app.service('GameSvc', function(){
 			// Roll
 			var MaxRolls = Math.floor(Math.random() * 8) + 5;
 			var rolling = window.setInterval(function(){
-				var lastRoll = randomDice();
+				randomDice();
 				if (MaxRolls-- <= 0){
+					var lastRoll = randomDice(forceValue);
 					window.clearInterval(rolling);
 					def.resolve(lastRoll);
 				}
@@ -122,10 +125,10 @@ app.service('GameSvc', function(){
 		},
 		
 		// Whole turn
-		doPlay : function(){
+		doPlay : function(forceValue){
 			Game = this;
 			// Roll the dice
-			var rolled = this.rollDice();
+			var rolled = this.rollDice(forceValue);
 			
 			// Move the paw
 			var moved = rolled.then(function(dice){ return Game.treatRoll(dice); });

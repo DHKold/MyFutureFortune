@@ -1,7 +1,7 @@
 app.controller('QuestionWhenTaxCtrl', ['$scope', 'FavoriteService', function ($scope, FavoriteService) {
 	$scope.answered = false;
 	$scope.ok = false;
-	$scope.initFavorite('Quand payer ses taxes');
+	$scope.initPanel('Quand payer ses taxes', null, false);
 
 	$scope.answer = function(a) {
 		if (a) {
@@ -9,6 +9,6 @@ app.controller('QuestionWhenTaxCtrl', ['$scope', 'FavoriteService', function ($s
 		}
 		$scope.answered = true;
 		$scope.ok = a;
-		$scope.initPanel(null, "aFaireImpot");
+		$scope.initPanel('Quand payer ses taxes', "aFaireImpot");
 	}
 }]);
